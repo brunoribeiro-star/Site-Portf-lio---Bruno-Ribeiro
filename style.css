@@ -4,14 +4,19 @@
     --purple1-color: #a703af;
     --purple2-color: #5f0064;
     --grey-color: #353535;
+    --black-color: #0a0a0a;
 }
 
 * {
     padding: 0;
     margin: 0;
     font-family: Poppins;
-    background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 body, html {
@@ -60,20 +65,19 @@ body, html {
     padding: 15px 30px;
     font-size: 1.2rem;
     color: var(--text-color);
-    background: linear-gradient(90deg, var(--purple1-color), var(--purple2-color)); /* Degradê da esquerda para a direita */
+    background: linear-gradient(90deg, var(--purple1-color), var(--purple2-color));
     border: none;
     border-radius: 50px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease; /* Efeito suave ao passar o mouse */
+    transition: transform 0.3s ease, background 0.3s ease;
     text-align: center;
 }
 
-/* Efeito "grow" no hover */
 .inicio-btn:hover {
-    transform: scale(1.1); /* Efeito de crescimento no hover */
-    background: linear-gradient(90deg, var(--purple2-color), var(--purple1-color)); /* Inverte o degradê no hover */
+    transform: scale(1.1);
+    background: linear-gradient(90deg, var(--purple2-color), var(--purple1-color));
 }
 
 .inicio-img {
@@ -90,12 +94,12 @@ body, html {
 }
 
 .custom-divider {
-    width: 80%;
+    width: 90%;
     height: 3px;
     position: relative;
-    background: linear-gradient(to right, transparent, var(--purple1-color), transparent); /* Cria a linha roxa centralizada */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra para dar o efeito de profundidade */
-    margin: -8px auto;
+    background: linear-gradient(to right, transparent, var(--purple1-color), transparent);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+    margin: -7px auto;
 }
 
 #changing-text {
@@ -112,11 +116,10 @@ body, html {
 
 @keyframes blink {
     from, to {border-color: transparent; }
-    50% {border-color: white;}
+    50% {border-color: var(--text-color);}
 }
 
 .sobre {
-    background-color: var(--bg-color);
     width: 100%;
     display: flex;
     align-items: center;
@@ -138,12 +141,13 @@ body, html {
 
 .headline-sobre {
     height: 30%;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    padding-top: 100px;
+    position: relative;
 }
 
 .headline-scroll {
@@ -186,4 +190,210 @@ body, html {
 .headline-scroll .light {
     font-weight: lighter;
     color: var(--grey-color);
+}
+
+.sobre-mim {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.sobre-mim-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.sobre-mim-tt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.sobre-mim-tt h1 {
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+
+.sobre-mim-tt h1 span {
+    color: var(--purple1-color);
+    font-weight: 800;
+}
+
+.sobre-mim-tt p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.sobre-mim-icones {
+    list-style: none; 
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+.sobre-mim-icones li {
+    display: inline-block;
+    position: relative;
+}
+
+.sobre-mim-icones a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.sobre-mim-icones .img-git:hover img {
+    content: url('assets/git.svg');
+}
+.sobre-mim-icones .img-insta:hover img {
+    content: url('assets/insta2.svg');
+}
+.sobre-mim-icones .img-behance:hover img {
+    content: url('assets/behance2.svg');
+}
+
+.sobre-mim-icones img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%; 
+    transition: transform 0.3s ease;
+}
+
+.sobre-mim-icones a:hover img {
+    transform: scale(1.1); 
+}
+
+.sobre-mim-icones img:hover {
+    transform: scale(1.1); 
+}
+
+.sobre-mim-icones a::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.sobre-mim-icones a:hover::before {
+    opacity: 1;
+}
+
+.sobre-mim-icones li:hover::before {
+    opacity: 1;
+}
+
+.sobre-mim-icones li:hover img {
+    transform: scale(1.1);
+}
+
+.sobre-mim-img {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-mim-img img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid var(--purple1-color);
+    border-radius: 30px 0;
+}
+
+.servicos  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.servicos-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+}
+
+.servicos-idv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.servicos-idv > div {
+    width: 30%;
+}
+
+.servicos-idv h1 {
+    color: var(--text-color);
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.servicos-idv p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    margin-left: 7px;
+}
+
+.servicos-idv h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    margin-left: 7px;
+}
+  
+.servicos-idv img {
+    width: 100%;
+}
+
+.idv1, .idv2, .idv3 {
+    padding: 10px;
+    border-radius: 30px 30px 0 0;
+    background-color: var(--black-color);
+}
+
+.idv-btn1, .idv-btn2, .idv-btn3 {
+    background-color: var(--purple1-color);
+    margin-left: 7px;
+    padding: 10px 20px;
+    width: 98%;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.idv-btn1:hover, .idv-btn2:hover, .idv-btn3:hover {
+    background-color: var(--purple2-color);
 }
