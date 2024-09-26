@@ -1,0 +1,106 @@
+:root {
+    --bg-color: #030303;
+    --text-color: #dfdfdf;
+    --purple1-color: #a703af;
+    --purple2-color: #5f0064;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Poppins;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body, html {
+    height: 100%;
+}
+
+.inicio {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.inicio-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.inicio-tt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+
+.inicio-tt h1 {
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+
+.inicio-tt p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.inicio-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    background: linear-gradient(90deg, var(--purple1-color), var(--purple2-color)); /* Degradê da esquerda para a direita */
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease; /* Efeito suave ao passar o mouse */
+    text-align: center;
+}
+
+/* Efeito "grow" no hover */
+.inicio-btn:hover {
+    transform: scale(1.1); /* Efeito de crescimento no hover */
+    background: linear-gradient(90deg, var(--purple2-color), var(--purple1-color)); /* Inverte o degradê no hover */
+}
+
+.inicio-img {
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    align-items: flex-end;
+}
+
+.inicio-img img {
+    width: 160%;
+    height: auto;
+    object-fit: cover;
+}
+
+#changing-text {
+    color: var(--purple1-color);
+    font-weight: bold;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink 0.7s step-end infinite;
+    vertical-align: middle;
+    line-height: inherit;
+}
+
+@keyframes blink {
+    from, to {border-color: transparent; }
+    50% {border-color: white;}
+}
