@@ -643,3 +643,102 @@ body, html {
 .site-btn1:hover, .site-btn2:hover, .site-btn3:hover {
     background-color: var(--purple2-color);
 }
+
+.roadmap-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.roadmap-heading-content {
+    text-align: center;
+}
+
+.roadmap-heading-content h1 {
+    color: var(--purple1-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+.roadmap-heading-content p {
+    font-size: 1.2rem;
+}
+
+.roadmap {
+    position: relative;
+    padding: 50px 0;
+    width: 100%;
+    background-color: var(--bg-color); /* fundo preto */
+}
+
+.roadmap-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.roadmap-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: var(--purple1-color);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.roadmap-step {
+    position: relative;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.roadmap-step .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    border: 3px solid var(--text-color);
+    z-index: 1;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.roadmap-step.active .circle {
+    background-color: var(--purple1-color);
+    border-color: var(--purple1-color);
+}
+
+.roadmap-text.right {
+    text-align: left;
+    margin-left: 20px;
+    position: absolute;
+    left: 55%;
+    transform: translateX(0);
+}
+
+.roadmap-text.left {
+    text-align: right;
+    margin-right: 20px;
+    position: absolute;
+    right: 55%;
+    transform: translateX(0);
+}
+
+.roadmap-text p {
+    font-size: 1.2rem;
+    color: var(--grey2-color);
+}
+
+.roadmap-text span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
