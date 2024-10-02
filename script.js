@@ -84,6 +84,49 @@ document.addEventListener('scroll', function() {
   }
 });
 
+// Função que verifica se o elemento está visível na tela
+function isElementVisible(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+
+// Função que anima as caixas de informação ao rolar para baixo e para cima
+function animateOnScroll() {
+  const boxes = document.querySelectorAll('.info-box');
+ 
+  boxes.forEach(box => {
+      if (isElementVisible(box)) {
+          // Se a caixa estiver visível, faz aparecer da direita para a esquerda
+          box.style.opacity = 1;
+          box.style.transform = 'translateX(0)';  // Volta à posição original
+      } else {
+          // Se a caixa não estiver visível, faz desaparecer movendo para a direita
+          box.style.opacity = 0;
+          box.style.transform = 'translateX(100px)';  // Movida novamente para a direita
+      }
+  });
+}
+
+
+// Chama a função ao rolar a página
+window.addEventListener('scroll', animateOnScroll);
+
+function showDiv(divId) {
+  // Esconde todas as divs com a classe 'service-section'
+  const sections = document.querySelectorAll('.service-section');
+  sections.forEach((section) => {
+      section.style.display = 'none';
+  });
+
+  // Mostra apenas a div correspondente ao botão clicado
+  const targetDiv = document.getElementById(divId);
+  if (targetDiv) {
+      targetDiv.style.display = 'block';
+  }
+}
+
+
 
 
 

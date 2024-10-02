@@ -220,41 +220,113 @@
             </div>
         </section>
         
-        <section class="servicos2">
-            <div class="servicos2-texto">
-                <p>Não só Identidades Visuais, aqui você recebe o seu posicionamento</p>
-                <button class="button" data-text="Awesome">
-                    <span class="actual-text">&nbsp;COMPLETO&nbsp;</span>
-                    <span aria-hidden="true" class="hover-text">&nbsp;COMPLETO&nbsp;</span>
-                </button>
-                <div class="custom-divider"></div>
+        <section class="info-section">
+            <div class="text-left">
+                <h1>Sobre o Projeto</h1>
+                <p>A estrutura do projeto é bem simples, cada etapa serve como complemento para a próxima, até a entrega do projeto.</p>
+                <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">QUERO MEU PROJETO</span>
+                  </button>
             </div>
-            <div class="servicos2-content">
-                <div class="servicos-site">
-                    <div class="site1">
-                        <img src="assets/range2.webp" alt="MUNZ">
-                        <h1>RANGE MIDIAS | Assessoria</h1>
-                        <p>Feito por</p>
-                        <h3>Bruno Ribeiro</h3>
-                        <a href="https://rangemidias.netlify.app/" target="_blank"><button class="idv-btn1">PROJETO COMPLETO</button></a>
-                    </div>
-                    <div class="site2">
-                        <img src="assets/eu2.webp" alt="MUNZ">
-                        <h1>BRUNO RIBEIRO | Designer</h1>
-                        <p>Feito por</p>
-                        <h3>Bruno Ribeiro</h3>
-                        <a href="https://obrunodesigner.com.br/" target="_blank"><button class="idv-btn1">PROJETO COMPLETO</button></a>
-                    </div>
-                    <div class="site3">
-                        <img src="assets/exclusive2.webp" alt="MUNZ">
-                        <h1>EXCLUSIVE APPLE | iPhones</h1>
-                        <p>Feito por</p>
-                        <h3>Bruno Ribeiro</h3>
-                        <a href="https://exclusiveapple.com.br/" target="_blank"><button class="idv-btn1">PROJETO COMPLETO</button></a>
-                    </div>
+            <div class="info-right">
+                <div class="info-box" id="box1">
+                    <h2>Reunião de Alinhamento</h2>
+                    <p>Aqui é o início de tudo, fazemos uma reunião rápida, onde eu te explico melhor como funciona cada etapa e entrega do meu trabalho, e você me diz todas as suas ideias para o projeto.</p>
+                </div>
+                <div class="info-box" id="box2">
+                    <h2>Coleta de Informações</h2>
+                    <p>Após a reunião, te enviarei um breve formulário, onde farei a coleta de todas as informações necessárias para o desenvolvimento do projeto. Juntamente com uma coleta de referências.</p>
+                </div>
+                <div class="info-box" id="box3">
+                    <h2>Desenvolvimento</h2>
+                    <p>Aqui é a verdadeira mão na massa, onde começo separando e estudando todas as informações fornecidas, faço os esboços, e depois de tudo, finalmente o desenvolvimento do projeto</p>
+                </div>
+                <div class="info-box" id="box4">
+                    <h2>Entrega</h2>
+                    <p>Depois de tudo pronto, marcamos uma reunião, e nela te apresento o projeto, cada passo que fiz pra chegar nesse resultado, tiro suas dúvidas, e entrego todos os seus materiais.</p>
                 </div>
             </div>
         </section>
+
+        <section class="escolha-servico">
+            <div class="escolha-servico-content">
+                <h1>24 horas por dia em disposição para atender o seu negócio com nossas soluções personalizadas!</h1>
+                <p>Selecione o que você deseja:</p>
+                <div class="escolha-btn">
+                    <button class="shadow__btn" onclick="showDiv('identidade-visual')">
+                        Identidade Visual
+                    </button>
+                    <button class="shadow__btn" onclick="showDiv('landing-page')">
+                        Landing Page
+                    </button>
+                    <button class="shadow__btn" onclick="showDiv('social-media')">
+                        Social Media
+                    </button>
+                </div>
+                <div class="escolha-servicos">
+                    <div id="identidade-visual" class="service-section">
+                       <div class="identidade-visual-img">
+                        <picture>
+                            <source srcset="assets/macbook1.webp" type="image/webp">
+                            <img src="assets/macbook1.webp" alt="Macbook mostrando um site" style="width: 100%; height: auto;">
+                        </picture>
+                       </div>
+                       <div class="identidade-visual-tt">
+                            <h1>Identidade Visual</h1>
+                            <p>Desenvolvemos Identidades Visuais chamativas com foco na satisfação cliente e maior representação da marca, criando algo completo e pronto para ser aplicado em qualquer meio.</p>
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">QUERO IDENTIDADE VISUAL</span>
+                              </button>
+                       </div>
+                    </div>
+
+                    <div id="landing-page" class="service-section" style="display: none;">
+                        <div class="landing-page-img">
+                         <picture>
+                             <source srcset="assets/macbook1.webp" type="image/webp">
+                             <img src="assets/macbook1.webp" alt="Macbook mostrando um site" style="width: 100%; height: auto;">
+                         </picture>
+                        </div>
+                        <div class="landing-page-tt">
+                             <h1>Landing Page</h1>
+                             <p>Criação completa da sua Landing Page, desde a copy, até o design e a implementação, sendo estremamente focadas em conversão de vendas, e elevando o nível da sua empresa.</p>
+                             <button class="learn-more">
+                                 <span class="circle" aria-hidden="true">
+                                 <span class="icon arrow"></span>
+                                 </span>
+                                 <span class="button-text">QUERO LANDING PAGE</span>
+                               </button>
+                        </div>
+                     </div>
+
+                     <div id="social-media" class="service-section" style="display: none;">
+                        <div class="social-media-img">
+                         <picture>
+                             <source srcset="assets/macbook1.webp" type="image/webp">
+                             <img src="assets/macbook1.webp" alt="Macbook mostrando um site" style="width: 100%; height: auto;">
+                         </picture>
+                        </div>
+                        <div class="social-media-tt">
+                             <h1>Social Media</h1>
+                             <p>Elaboração e criação de conteúdos mensais para o seu perfil do Instagram, com foco total em crescimento e engajamento, utilizando de conteúdos virais e designs atrativos que fixam o público no seu conteúdo.</p>
+                             <button class="learn-more">
+                                 <span class="circle" aria-hidden="true">
+                                 <span class="icon arrow"></span>
+                                 </span>
+                                 <span class="button-text">QUERO SOCIAL MEDIA</span>
+                               </button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>
