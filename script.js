@@ -116,15 +116,63 @@ function showDiv(divId) {
   // Esconde todas as divs com a classe 'service-section'
   const sections = document.querySelectorAll('.service-section');
   sections.forEach((section) => {
+    section.style.display = 'none'; // Esconde todas as seções
+    section.classList.remove('active'); // Remove a classe active
+  });
+
+  // Mostra apenas a div correspondente ao botão clicado
+  const targetDiv = document.getElementById(divId);
+  if (targetDiv) {
+    targetDiv.style.display = 'flex'; // Garante que o display seja flex
+    targetDiv.classList.add('active'); // Adiciona a classe active para manter a transição e layout
+  }
+}
+
+
+function showDiv(divId) {
+  // Esconde todas as divs com a classe 'service-section'
+  const sections = document.querySelectorAll('.service-section');
+  sections.forEach((section) => {
       section.style.display = 'none';
   });
 
   // Mostra apenas a div correspondente ao botão clicado
   const targetDiv = document.getElementById(divId);
   if (targetDiv) {
-      targetDiv.style.display = 'block';
+      targetDiv.style.display = 'flex'; // Torna a div visível
   }
+
+  // Remove a classe 'active' de todos os botões
+  const buttons = document.querySelectorAll('.shadow__btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  // Adiciona a classe 'active' ao botão clicado
+  const clickedButton = document.querySelector(`[onclick="showDiv('${divId}')"]`);
+  clickedButton.classList.add('active');
 }
+
+// Seleciona todas as perguntas
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const button = item.querySelector('.faq-question');
+  button.addEventListener('click', () => {
+    // Alterna a classe 'active' para abrir ou fechar a pergunta clicada
+    const isActive = item.classList.contains('active');
+    
+    // Fecha todas as outras perguntas
+    faqItems.forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-question').classList.remove('active'); // Remove o active do botão
+    });
+    
+    // Se a pergunta clicada estava fechada, abre ela e ativa o botão
+    if (!isActive) {
+      item.classList.add('active');
+      button.classList.add('active'); // Adiciona o active ao botão
+    }
+  });
+});
 
 
 
